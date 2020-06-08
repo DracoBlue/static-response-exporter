@@ -1,0 +1,10 @@
+server {
+    listen       80;
+    listen  [::]:80;
+    server_name  _;
+
+    location / {
+        root /etc/nginx/conf.d;
+        rewrite ^.*$ /response.txt break;
+    }
+}
